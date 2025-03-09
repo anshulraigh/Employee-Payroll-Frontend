@@ -1,0 +1,156 @@
+.employee-form {
+  padding: 20px;
+  max-width: 60%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.employee-form h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  width: 40%;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Profile Image Selection */
+.profile-image-selection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile-image-selection input {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.profile-image-selection label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.profile-image-selection img {
+  width: 50px; /* Icon size */
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: border 0.3s ease;
+  border: 2px solid transparent;
+  margin-right: 10px;
+}
+
+/* Selected Profile Image Border */
+.profile-image-selection input:checked + label img {
+  border: 2px solid green; /* Border color to indicate selected image */
+}
+
+/* Department Checkbox Spacing */
+.department-selection label {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+/* Start Date Dropdowns */
+.start-date-select {
+  display: flex;
+  gap: 10px; /* Add padding between the dropdowns */
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn,
+.submit-btn,
+.reset-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.cancel-btn {
+  background-color: grey;
+}
+
+.cancel-btn:hover {
+  background-color: darkgrey;
+}
+
+.submit-btn {
+  background-color: lightgrey;
+}
+
+.submit-btn:hover {
+  background-color: green;
+}
+
+.reset-btn {
+  background-color: darkgrey;
+}
+
+.reset-btn:hover {
+  background-color: grey;
+}
+
+.submit-btn {
+  margin-right: 10px; 
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .employee-form {
+    max-width: 90%;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .form-group label {
+    width: 100%;
+  }
+
+  .button-container {
+    width: 100%;
+  }
+
+  .profile-image-selection {
+    flex-direction: column;
+  }
+
+  .profile-image-selection img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-form {
+    padding: 15px;
+  }
+
+  .submit-btn {
+    background-color: lightgreen;
+  }
+}

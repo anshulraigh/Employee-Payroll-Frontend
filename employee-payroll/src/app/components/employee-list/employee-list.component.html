@@ -1,0 +1,49 @@
+<div class="employee-list">
+    <div class="emp-list-heading">
+        <h2 style="color: rgb(66,81,95);">Employee Details</h2>
+        <div class="adduser-btn-right">
+            <button class="search-btn">
+                <span class="material-icons">search</span>
+            </button>
+            <button class="add-user-btn" (click)="addEmployee()">+ Add User</button>
+        </div>
+    </div>
+  
+    <table class="table">
+        <thead class="col-headings">
+            <tr>
+                <th>NAME</th>
+                <th>GENDER</th>
+                <th>DEPARTMENT</th>
+                <th>SALARY</th>
+                <th>START DATE</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>
+                    <div class="profile-container">
+                        <!-- Assuming the backend sends the correct image file name -->
+                        <img [src]="employee.profileImage + '.jpg'" class="profile-image" alt="Profile Image">
+                        <span>{{ employee.name }}</span>
+                    </div>
+                </td>
+                <td>{{ employee.gender }}</td>
+                <td>
+                    <span *ngFor="let dept of employee.departments" class="department-badge">{{ dept }}</span>
+                </td>
+                <td>₹{{ employee.salary }}</td>
+                <td>{{ employee.startDay }} {{ employee.startMonth }} {{ employee.startYear }}</td>
+                <td class="actions">
+                    <button class="delete-btn" (click)="deleteEmployee(employee.id)">
+                        <span class="material-icons">delete</span>
+                    </button>
+                    <button class="edit-btn" (click)="editEmployee(employee)">
+                        <span class="material-icons">edit</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

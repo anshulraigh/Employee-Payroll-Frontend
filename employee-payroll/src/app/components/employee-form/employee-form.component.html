@@ -1,0 +1,81 @@
+<div class="employee-form">
+  <h2>Employee Payroll Form</h2>
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" [(ngModel)]="employeeData.name" required />
+    </div>
+
+    <div class="form-group">
+      <label>Profile Image</label>
+      <div class="profile-image-selection">
+        <input type="radio" id="profile1" name="profileImage" value="image1" [(ngModel)]="employeeData.profileImage" />
+        <label for="profile1">
+          <img src="image1.jpg" class="rounded-circle border border-secondary p-1" />
+        </label>
+
+        <input type="radio" id="profile2" name="profileImage" value="image2" [(ngModel)]="employeeData.profileImage" />
+        <label for="profile2">
+          <img src="image2.jpg" class="rounded-circle border border-secondary p-1" />
+        </label>
+
+        <input type="radio" id="profile3" name="profileImage" value="image3" [(ngModel)]="employeeData.profileImage" />
+        <label for="profile3">
+          <img src="image3.jpg" class="rounded-circle border border-secondary p-1" />
+        </label>
+
+        <input type="radio" id="profile4" name="profileImage" value="image4" [(ngModel)]="employeeData.profileImage" />
+        <label for="profile4">
+          <img src="image4.jpg" class="rounded-circle border border-secondary p-1" />
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group gender-selection">
+      <label>Gender</label>
+      <label><input type="radio" name="gender" value="Male" [(ngModel)]="employeeData.gender" /> Male</label>
+      <label><input type="radio" name="gender" value="Female" [(ngModel)]="employeeData.gender" /> Female</label>
+    </div>
+
+    <div class="form-group department-selection">
+      <label>Department</label>
+      <div>
+        <label *ngFor="let dept of departments">
+          <input type="checkbox" [value]="dept" [checked]="employeeData.departments.includes(dept)" (change)="updateDepartments($event, dept)" />
+          {{ dept }}
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <select id="salary" name="salary" [(ngModel)]="employeeData.salary" required>
+        <option *ngFor="let salary of salaryOptions" [value]="salary">{{ salary }}</option>
+      </select>
+    </div>
+
+    <div class="form-group start-date-select">
+      <label>Start Date</label>
+      <select name="startDateDay" [(ngModel)]="employeeData.startDate.day" required>
+        <option *ngFor="let day of dayOptions" [value]="day">{{ day }}</option>
+      </select>
+      <select name="startDateMonth" [(ngModel)]="employeeData.startDate.month" required>
+        <option *ngFor="let month of monthOptions" [value]="month">{{ month }}</option>
+      </select>
+      <select name="startDateYear" [(ngModel)]="employeeData.startDate.year" required>
+        <option *ngFor="let year of yearOptions" [value]="year">{{ year }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" [(ngModel)]="employeeData.notes" rows="5"></textarea>
+    </div>
+
+    <div class="button-container">
+      <button type="button" class="cancel-btn" (click)="cancelForm()">Cancel</button>
+      <button type="submit" class="submit-btn">Submit</button>
+      <button type="button" class="reset-btn" (click)="resetForm()">Reset</button>
+    </div>
+  </form>
+</div>

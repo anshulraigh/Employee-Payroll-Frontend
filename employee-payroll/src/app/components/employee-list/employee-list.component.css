@@ -1,0 +1,94 @@
+.employee-list {
+  padding: 20px;
+  background-color: rgb(247, 247, 247);
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  color: rgb(66,81,95);
+}
+
+.table th {
+  background-color:  rgb(66,81,95);
+  color: white;
+  font-weight: 300;
+}
+
+/* Profile Image & Name */
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.department-badge {
+  background-color: rgb(233,254,165);
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+/* Icons Styling */
+.edit-btn, .delete-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.edit-btn .material-icons, 
+.delete-btn .material-icons {
+  color: rgb(112, 124, 134);
+  font-size: 18px;
+}
+
+/* Buttons Styling */
+.adduser-btn-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push to right */
+}
+
+.search-btn, .add-user-btn {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn {
+  background-color: white;
+  border-radius: 50%;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+}
+
+.add-user-btn {
+  background-color: rgb(130,167,12);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: white;
+}
+
+.emp-list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
